@@ -4,30 +4,22 @@ A Java command-line project that demonstrates object-oriented design and CRUD wo
 
 ## Features
 
-- Add a student record
-- View all saved student records
+- Add student records
+- View all records
 - Find a student by ID
-- Update student details
-- Delete a student record
-- Separate model, management, and command-line responsibilities
+- Update student information
+- Delete student records
+- Separate model, management, and CLI responsibilities
 
 ## Technology
 
 - Java
-- Object-oriented programming (encapsulation)
-- `ArrayList` collection
-
-## Project structure
-
-```text
-Student.java         # Student model (ID, name, marks)
-StudentManager.java  # In-memory record operations
-Main.java            # Command-line menu
-```
+- Encapsulation and object-oriented programming
+- `ArrayList` for in-memory collections
 
 ## Run locally
 
-Install a JDK, clone the repository, and open a terminal in the project directory.
+Install a JDK, then clone and compile the project:
 
 ```bash
 git clone https://github.com/saikishore2410/Student-Record-Management-System-CLI-.git
@@ -36,23 +28,22 @@ javac *.java
 java Main
 ```
 
-If your source files define a package, compile and run using the package structure instead.
+These commands assume default-package Java files and `Main` as the entry point. Adjust if the source uses packages or a different entry-point class.
 
-## Design notes
+## Project scope
 
-This is an educational CLI project. Confirm persistence requirements before using it for real student data; an in-memory `ArrayList` does not retain records after the application exits.
+This is an educational CLI project. An in-memory list does not retain records after the process exits; verify persistence requirements before using real student data.
 
 ## Ideas to extend
 
 - File or database persistence
 - Input validation and duplicate-ID prevention
 - Unit tests for CRUD operations
-- Search and sorting by name or marks
-- CSV import/export
+- Search, sorting, and CSV import/export
 
-## Contributing
+## Contributions
 
-Open an issue to discuss a change, then submit a focused pull request with clear test steps.
+Please include reproduction steps for bugs and tests for behavioural changes.
 
 ## License
 
