@@ -1,54 +1,50 @@
 # Student Record Management System (CLI)
 
-[![Java](https://img.shields.io/badge/Java-CLI-orange?logo=openjdk)](https://www.java.com/) [![Repository](https://img.shields.io/badge/GitHub-Source-181717?logo=github)](https://github.com/kandisaikishore/Student-Record-Management-System-CLI-) [![Last Commit](https://img.shields.io/github/last-commit/kandisaikishore/Student-Record-Management-System-CLI-)](https://github.com/kandisaikishore/Student-Record-Management-System-CLI-/commits/main)
+[![Java](https://img.shields.io/badge/Java-CLI-orange?logo=openjdk)](https://www.java.com/) [![GitHub](https://img.shields.io/badge/Source-GitHub-181717?logo=github)](https://github.com/kandisaikishore/Student-Record-Management-System-CLI-)
 
-A Java command-line application for managing student records through a menu-driven workflow. The project is organized around `Student`, `StudentManager`, and `Main` classes to demonstrate object-oriented design and basic record management.
+A menu-driven Java command-line application for managing student records. The project is a compact example of modeling student data, separating application logic, and handling user input in a terminal.
 
 ## Features
 
-- Represent a student using a dedicated model class
-- Manage student records through a manager class
-- Interact with the application from the console
-- Practise class design, collections, and CRUD-style workflows
+- Create and manage student records through a console workflow
+- Organize application logic using Java classes
+- Practise object-oriented programming and record-management operations
+- Explore input validation and edge-case handling
 
-Review `Main.java` and `StudentManager.java` for the exact commands and validation implemented.
+Check `Main.java` for the current menu and supported operations. The repository's current top-level source is `Main.java`; compile additional source files if the implementation is split into more classes.
 
-## Tech stack
+## Technology
 
 - Java / JDK
-- Object-oriented programming
 - Console input/output
-
-## Prerequisites
-
-Install a JDK and confirm `java` and `javac` are available.
+- Object-oriented programming
 
 ## Run locally
 
 ```bash
 git clone https://github.com/kandisaikishore/Student-Record-Management-System-CLI-.git
 cd Student-Record-Management-System-CLI-
-javac Main.java Student.java StudentManager.java
+javac Main.java
 java Main
 ```
 
-These commands assume all classes use the default package. Adjust them if packages or additional dependencies are introduced.
+If the project has additional `.java` files or package declarations, compile them together and run the fully qualified entry-point class.
 
-## Data and limitations
+## Validation checklist
 
-Check the source to confirm whether student records are only held in memory or saved to durable storage. Do not use the example for real student information without appropriate privacy, access-control, and data-retention protections.
+Try adding multiple records, searching for existing and missing IDs, updating records, deleting records, and entering invalid menu choices. Verify whether data persists after the application closes before relying on it for anything beyond practice.
 
-## Improvements to consider
+## Ideas for improvement
 
-- Add field validation and duplicate-ID prevention
-- Persist records to a file or relational database
-- Add tests for record creation, lookup, update, and deletion
-- Add search, sorting, and import/export
+- Add automated unit tests
+- Validate required fields and prevent duplicate student IDs
+- Persist records to a file or database
+- Add search, sorting, and import/export options
 
 ## Contributing
 
-Please include reproduction steps and the test or manual checks performed.
+Report issues with reproduction steps and include validation results with proposed changes.
 
 ## License
 
-No license file is currently declared. Add a `LICENSE` file to define reuse terms.
+No license file is currently declared. Add a `LICENSE` file if you intend to define reuse terms.
