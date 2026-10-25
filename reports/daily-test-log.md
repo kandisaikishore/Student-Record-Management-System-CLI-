@@ -241,3 +241,12 @@
 
 - Java compile/test-runner smoke check: PASS
 
+## 2026-10-25 21:10:30 UTC
+- Status: PASS
+- Checks executed: 1
+- Tested commit: 0d5f9c2bf18d17356b05f364a11331266a375738
+- Branch: main
+- Workflow run: https://github.com/kandisaikishore/Student-Record-Management-System-CLI-/actions/runs/40234220649
+
+- Java compile/test-runner smoke check: PASS
+
