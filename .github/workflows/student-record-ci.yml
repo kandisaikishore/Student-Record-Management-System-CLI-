@@ -1,0 +1,29 @@
+name: Student Record Java CI
+
+on:
+  push:
+    branches: [main, "fix/**"]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: student-record-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Compile CLI and regression tests
+        run: javac -encoding UTF-8 Main.java Student.java StudentManager.java TestRunner.java
+      - name: Run record validation tests
+        run: java TestRunner
