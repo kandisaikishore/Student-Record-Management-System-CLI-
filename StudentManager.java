@@ -8,12 +8,12 @@ public class StudentManager {
         students = new ArrayList<>();
     }
 
-    public boolean addStudent(Student s) {
-        // prevent duplicate IDs
-        if (findStudentById(s.getId()) != null) {
+    public boolean addStudent(Student student) {
+        if (!isValid(student) || findStudentById(student.getId()) != null) {
             return false;
         }
-        students.add(s);
+        student.setName(student.getName().trim());
+        students.add(student);
         return true;
     }
 
@@ -22,23 +22,40 @@ public class StudentManager {
     }
 
     public Student findStudentById(int id) {
-        for (Student s : students) {
-            if (s.getId() == id) return s;
+        for (Student student : students) {
+            if (student.getId() == id) return student;
         }
         return null;
     }
 
     public boolean updateStudent(int id, String newName, Double newMarks) {
-        Student s = findStudentById(id);
-        if (s == null) return false;
-        if (newName != null && !newName.trim().isEmpty()) s.setName(newName);
-        if (newMarks != null) s.setMarks(newMarks);
+        Student student = findStudentById(id);
+        if (student == null) return false;
+
+        String normalizedName = newName == null ? "" : newName.trim();
+        if (newMarks != null && !isValidMarks(newMarks)) return false;
+
+        // Validate the complete update before mutating the existing record.
+        if (!normalizedName.isEmpty()) student.setName(normalizedName);
+        if (newMarks != null) student.setMarks(newMarks);
         return true;
     }
 
     public boolean deleteStudent(int id) {
-        Student s = findStudentById(id);
-        if (s == null) return false;
-        return students.remove(s);
+        Student student = findStudentById(id);
+        if (student == null) return false;
+        return students.remove(student);
+    }
+
+    private boolean isValid(Student student) {
+        return student != null
+            && student.getId() > 0
+            && student.getName() != null
+            && !student.getName().trim().isEmpty()
+            && isValidMarks(student.getMarks());
+    }
+
+    private boolean isValidMarks(double marks) {
+        return Double.isFinite(marks) && marks >= 0.0 && marks <= 100.0;
     }
 }
